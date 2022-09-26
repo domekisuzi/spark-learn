@@ -7,7 +7,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 trait TApplication {
   /**
    * 控制抽象，可以把一段代码传进来执行,柯里化
-   * @param op
+   * @param opA
    */
 
   def start(master:String="local[*]",app:String="Application")(op: =>Unit): Unit ={

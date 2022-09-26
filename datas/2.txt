@@ -1,2 +1,0 @@
-Hello Hive
-Hello Spark
