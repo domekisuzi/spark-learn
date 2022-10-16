@@ -2,7 +2,7 @@ package cn.xdc.bigdata.scala.core.opratator.transform
 
 import org.apache.spark.{SparkConf, SparkContext}
 /**
- * 提高效率，先计算分区再运算 缓冲
+ * 提高效率，先计算分区再运算 缓冲 mapPartitions
  */
 object Spark02_RDD_Operator_Transfrom_Test {
   def main(args: Array[String]): Unit = {
@@ -25,7 +25,6 @@ object Spark02_RDD_Operator_Transfrom_Test {
          List (iter.max).iterator
       })
     mapRDD.collect().foreach(println)
-
     sc.stop()
   }
 }

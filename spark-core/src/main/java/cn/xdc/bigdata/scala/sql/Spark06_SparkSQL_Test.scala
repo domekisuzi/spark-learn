@@ -35,7 +35,7 @@ object Spark06_SparkSQL_Test {
         | `city_id` bigint)
         |row format delimited fields terminated by '\t'
         |""".stripMargin
-    ).show
+    )
     spark.sql("load data local inpath 'datas/user_visit_action.txt' into table  user_visit_action")
 
     spark.sql("""CREATE TABLE `product_info`(
@@ -51,8 +51,9 @@ object Spark06_SparkSQL_Test {
                 | `city_name` string,
                 | `area` string)
                 |row format delimited fields terminated by '\t'""".stripMargin)
-    spark.sql("""load data local inpath 'input/city_info.txt' into table city_info""")
-    spark.sql(""" select * from city_info""")
+    spark.sql("""load data local inpath 'datas/city_info.txt' into table city_info""")
+    spark.sql(""" select * from city_info""").show
+
     spark.close()
   }
 

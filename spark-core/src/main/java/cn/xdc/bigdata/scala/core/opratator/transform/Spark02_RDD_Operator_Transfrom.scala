@@ -2,7 +2,7 @@ package cn.xdc.bigdata.scala.core.opratator.transform
 
 import org.apache.spark.{SparkConf, SparkContext}
 /**
- * 提高效率，先计算分区再运算 缓冲
+ * 提高效率，先计算分区再运算 缓冲    map 高阶 mapPartitions
  */
 object Spark02_RDD_Operator_Transfrom {
   def main(args: Array[String]): Unit = {

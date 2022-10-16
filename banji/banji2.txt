@@ -1,0 +1,18 @@
+13 张三 27 男 chinese 40
+13 张三 27 男 math 63
+13 张三 27 男 english 76
+13 李四 18 男 chinese 58
+13 李四 18 男 math 42
+13 李四 18 男 english 90
+13 王五 21 女 chinese 80
+13 王五 21 女 math 79
+13 王五 21 女 english 60
+13 李二 25 男 chinese 61
+13 李二25 男 math 78
+13 李二 25 男 english 91
+13 凯 24 男 chinese 43
+13 凯 24 男 math 56
+13 凯 24 男 english 76
+13 卡卡西 19 男 chinese 99
+13 卡卡西 19 男 math 90
+13 卡卡西 19 男 english 100

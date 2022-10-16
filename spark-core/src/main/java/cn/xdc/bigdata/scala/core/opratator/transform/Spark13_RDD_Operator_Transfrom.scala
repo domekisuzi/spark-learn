@@ -14,7 +14,7 @@ object Spark13_RDD_Operator_Transfrom {
 
     // 交集 3,4
     val rdd1 = sc.makeRDD(List((1,2),(3,4)) )
-
+    val value = rdd1.reduceByKey(_ + _)
     val rdd2 = sc.makeRDD(List((3,4),(5,6)) )
 
     val rdd3 = rdd1.intersection(rdd2)

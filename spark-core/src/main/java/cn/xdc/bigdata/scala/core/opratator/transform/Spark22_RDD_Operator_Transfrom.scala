@@ -27,5 +27,4 @@ object Spark22_RDD_Operator_Transfrom {
     sc.stop()
 
   }
-
 }

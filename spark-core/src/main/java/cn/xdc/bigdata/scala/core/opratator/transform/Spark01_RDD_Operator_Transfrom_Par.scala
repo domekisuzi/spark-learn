@@ -1,7 +1,9 @@
 package cn.xdc.bigdata.scala.core.opratator.transform
 
 import org.apache.spark.{SparkConf, SparkContext}
-
+/**
+ *  map
+ */
 object Spark01_RDD_Operator_Transfrom_Par {
   def main(args: Array[String]): Unit = {
     val sparkConf = new SparkConf().setMaster("local[*]").setAppName("RDD")

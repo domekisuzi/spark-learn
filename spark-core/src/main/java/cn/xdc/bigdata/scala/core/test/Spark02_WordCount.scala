@@ -13,6 +13,8 @@ object Spark02_WordCount {
     //添加依赖，
     // 在 scala中可以用_代替参数，相当于 x => x.split(" ")
     //flatmap返回的任仍然是集合，此处把他们都分割开了
+    val value = line.map(_.split(','))
+    val value1 = line.filter((x: String) => x.split(' ')(0) != "asd")
     val words = line.flatMap(_.split(" "))
     val wordToOne = words.map(
       word => (word, 1)
@@ -28,6 +30,7 @@ object Spark02_WordCount {
         )
       }
     }
+    val value2 = wordToCount.filter(_._1 != "2")
     val array = wordToCount.collect()
     array.foreach(println)
     sc.stop()

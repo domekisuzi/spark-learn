@@ -14,8 +14,6 @@ object Spark03_RDD_Operator_Transfrom {
     val rdd = sc.makeRDD(List(1, 2, 3, 4),2)
 
     // 1,2,3,4
-
-
     //并行执行，但是如果在分区内则是串行执行
     //只有前面的数据执行完，后面的数据才会执行
     //不同分区数据计算是无序的
