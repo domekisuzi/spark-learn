@@ -18,12 +18,10 @@ object Spark03_SparkSQL_UADF1 {
     val df = spark.read.json("datas/user.json")
     df.createOrReplaceTempView("user")
     //functions.udaf 强转弱类型
-    spark.udf.register("prefixName",functions.udaf(new MyAvgUDAF()))
-    spark.sql("select age,prefixName(username) from user").show()
-    
+//    spark.udf.register("prefixName",functions.udaf(new MyAvgUDAF()))
+//    spark.sql("select age,prefixName(username) from user").show()
+
     spark.close()
-
-
 
   }
 

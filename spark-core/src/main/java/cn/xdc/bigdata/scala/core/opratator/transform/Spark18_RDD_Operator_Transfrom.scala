@@ -5,7 +5,7 @@ import org.apache.spark.{SparkConf, SparkContext}
 import java.io.File
 
 /**
- * foldByKey 如果 aggregateByKey 分区内外运算规则一致，则使用这个，相比于reduceByKey多了一个初始值
+ * foldByKey 如果 aggregateByKey 分区内外运算规则一致，则使用这个，相比于reduceByKey多了一个初始值，求平均数的案例
  */
 object Spark18_RDD_Operator_Transfrom {
   def main(args: Array[String]): Unit = {

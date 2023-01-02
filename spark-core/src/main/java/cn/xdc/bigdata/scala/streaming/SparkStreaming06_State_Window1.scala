@@ -19,6 +19,7 @@ object SparkStreaming06_State_Window1 {
     val windowDS = wordToOne.reduceByKeyAndWindow((x: Int, y: Int) => x + y, (x: Int, y: Int) => {
       x - y
     }, Seconds(9), Seconds(3))
+
     windowDS.print()
     // Code : Driver端
     //设置滑动步长大于采集时长可避免重复数据

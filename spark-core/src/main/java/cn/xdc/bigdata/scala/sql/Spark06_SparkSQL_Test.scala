@@ -3,6 +3,7 @@ package cn.xdc.bigdata.scala.sql
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
 
+
 /**
  * 弱类型 查找
  */
@@ -52,6 +53,7 @@ object Spark06_SparkSQL_Test {
                 | `area` string)
                 |row format delimited fields terminated by '\t'""".stripMargin)
     spark.sql("""load data local inpath 'datas/city_info.txt' into table city_info""")
+
     spark.sql(""" select * from city_info""").show
 
     spark.close()

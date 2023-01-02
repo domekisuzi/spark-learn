@@ -25,7 +25,6 @@ object Spark03_SparkSQL_UADF2 {
 //    spark.sql("select age,prefixName(username) from user").show()
     val ds = df.as[User]
     val udafCOl = new MyAvgUDAF().toColumn
-
     ds.select(udafCOl).show()
     spark.close()
 

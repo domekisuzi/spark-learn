@@ -17,7 +17,11 @@ object SparkStreaming05_State {
     val wordToOne = words.map((_,1))
     val state = wordToOne.updateStateByKey(
       (seq,buff:Option[Int])=>{
+
        val sum  = buff.getOrElse(0)+seq.sum
+
+
+        println("---------:"+seq.sum+":"+buff.get)
         Option(sum)
       }
     )

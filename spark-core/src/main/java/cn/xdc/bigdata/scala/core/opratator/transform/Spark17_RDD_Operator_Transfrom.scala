@@ -34,5 +34,5 @@ object Spark17_RDD_Operator_Transfrom {
     sc.stop()
 
   }
-  
+
 }

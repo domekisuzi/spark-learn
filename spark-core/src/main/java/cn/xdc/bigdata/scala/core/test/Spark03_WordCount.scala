@@ -8,6 +8,7 @@ object Spark03_WordCount {
     //建立链接
     val sparkConf = new SparkConf().setMaster("local").setAppName("WordCount")
     val sc = new SparkContext(sparkConf)
+//    val value = sc.parallelize()
     //读取文件,获取每行的数据
     val line = sc.textFile("datas")
     //添加依赖，

@@ -22,6 +22,8 @@ object Spark04_SparkSQL_JDBC {
       .option("password", "123456")
       .option("dbtable", "but")
       .load()
+
+
     df.write.format("jdbc")
       .option("url", "jdbc:mysql://domekisuzi.fun:3306/shixun")
       .option("driver", "com.mysql.jdbc.Driver")

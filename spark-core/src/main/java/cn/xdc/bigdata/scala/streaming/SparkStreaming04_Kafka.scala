@@ -32,7 +32,6 @@ object SparkStreaming04_Kafka {
         ConsumerStrategies.Subscribe[String, String](Set("domekisuzi"), kafkaPara))
 
     kafkaDStream.map(_.value()).print()
-
     ssc.start()
     ssc.awaitTermination()
   }

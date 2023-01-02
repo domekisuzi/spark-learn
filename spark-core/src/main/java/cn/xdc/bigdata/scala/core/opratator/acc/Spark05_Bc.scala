@@ -29,8 +29,6 @@ object Spark05_Bc {
 //    spark中的广播变量就可以将闭包数据保存到Executor的内存中（分布式共享只读变量）
     val bc = sc.broadcast(map)
 
-
-
     rdd.map{
 
       case (w,c)=>{

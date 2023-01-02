@@ -37,33 +37,33 @@ object Spark06_SparkSQL_Test2 {
              """.stripMargin).createOrReplaceTempView("t1")
 
     // 根据区域，商品进行数据聚合
-    spark.udf.register("cityRemark", functions.udaf(new CityRemarkUDAF()))
-    spark.sql(
-      """
-        |  select
-        |     area,
-        |     product_name,
-        |     count(*) as clickCnt,
-        |     cityRemark(city_name) as city_remark
-        |  from t1 group by area, product_name
-             """.stripMargin).createOrReplaceTempView("t2")
-
-    // 区域内对点击数量进行排行
-    spark.sql(
-      """
-        |  select
-        |      *,
-        |      rank() over( partition by area order by clickCnt desc ) as rank
-        |  from t2
-             """.stripMargin).createOrReplaceTempView("t3")
-
-    // 取前3名
-    spark.sql(
-      """
-        | select
-        |     *
-        | from t3 where rank <= 3
-             """.stripMargin).show(false)
+//    spark.udf.register("cityRemark", functions.udaf(new CityRemarkUDAF()))
+//    spark.sql(
+//      """
+//        |  select
+//        |     area,
+//        |     product_name,
+//        |     count(*) as clickCnt,
+//        |     cityRemark(city_name) as city_remark
+//        |  from t1 group by area, product_name
+//             """.stripMargin).createOrReplaceTempView("t2")
+//
+//    // 区域内对点击数量进行排行
+//    spark.sql(
+//      """
+//        |  select
+//        |      *,
+//        |      rank() over( partition by area order by clickCnt desc ) as rank
+//        |  from t2
+//             """.stripMargin).createOrReplaceTempView("t3")
+//
+//    // 取前3名
+//    spark.sql(
+//      """
+//        | select
+//        |     *
+//        | from t3 where rank <= 3
+//             """.stripMargin).show(false)
 
     spark.close()
   }

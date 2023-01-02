@@ -19,10 +19,8 @@ object Spark03_SparkSQL_UADF {
     df.createOrReplaceTempView("user")
     spark.udf.register("prefixName",new MyAvgUDAF())
     spark.sql("select age,prefixName(username) from user").show()
-    
+
     spark.close()
-
-
 
   }
 
